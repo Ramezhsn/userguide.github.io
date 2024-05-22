@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - UserGuide</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+</html><style>
+  body {
+    font-family: 'Calibri', sans-serif;
+    font-size: 17px;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    height: 90vh;
+}
+
+h1 {
+    color: #c0392b;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.component {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 18px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.component h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.popup {
+    display: none;
+    margin-top: 10px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #e74c3c;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.popup p {
+    margin: 0;
+}
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>User Guide for EVCA Page</title>
+</head>
+<body>
+    <div class="container">
+        <h1>User Guide for EVCA Page</h1>
+        <div class="component" id="purpose" onclick="togglePopup('purpose-popup')">
+            <h2>Purpose</h2>
+            <div id="purpose-popup" class="popup">
+                <p>The EVCA (Enhanced Vulnerability and Capacity Assessment) page provides interactive access to community-based disaster risk management reports, hazard exposure maps, risk scores, and relevant tools.</p>
+            </div>
+        </div>
+        <div class="component" id="navigation_usage" onclick="togglePopup('navigation_usage-popup')">
+            <h2>Navigation and Usage</h2>
+            <div id="navigation_usage-popup" class="popup">
+                <p><strong>Expandable Sections:</strong></p>
+                <p>The EVCA page contains several sections, each representing different aspects of vulnerability and capacity assessments. Each section is designed to be interactive, allowing users to expand and collapse detailed content.</p>
+                <p><strong>Interacting with Sections:</strong></p>
+                <p><em>Expanding a Section:</em> Click on the header of any section to expand it. Upon clicking, detailed information will be displayed below the header.</p>
+                <p><em>Collapsing a Section:</em> Click on the header of an already expanded section to collapse it. The detailed information will be hidden from view.</p>
+                <p><strong>Viewing Detailed Information:</strong></p>
+                <p>When a section is expanded, a pop-up containing detailed information will appear. This detailed information can include text descriptions, maps, data visualizations, and links to further resources. Each section provides insights into specific aspects of disaster risk management and community resilience.</p>
+                <p><strong>Using Interactive Data Visualizations:</strong></p>
+                <p>Some sections may include interactive data visualizations. Hover over or click on elements within these visualizations to view more details. These interactions can provide additional insights and context for the displayed data.</p>
+                <p><strong>Accessing Additional Tools and Reports:</strong></p>
+                <p>Links to additional tools, reports, and external resources may be provided within the expanded sections. Click on these links to access further information and resources that support disaster risk management efforts.</p>
+            </div>
+        </div>
+        <div class="component" id="usage_flow" onclick="togglePopup('usage_flow-popup')">
+            <h2>Example of Usage Flow</h2>
+            <div id="usage_flow-popup" class="popup">
+                <p><strong>Start:</strong> Open the EVCA page from the main menu.</p>
+                <p><strong>Expand a Section:</strong> Click on a section header (e.g., "Hazard Exposure Maps") to view the detailed information.</p>
+                <p><strong>Interact with Data:</strong> Hover over the data visualizations to explore more details.</p>
+                <p><strong>Collapse a Section:</strong> Click on the section header again to hide the detailed information. Navigate Between Areas: Use navigation arrows to move between different geographical areas if applicable.</p>
+                <p><strong>Access External Resources:</strong> Click on any provided links to access additional reports and tools.</p>
+            </div>
+        </div>
+        <div class="component" id="user_guide_per_page" onclick="togglePopup('user_guide_per_page-popup')">
+            <h2>User Guide Per Each Page</h2>
+            <div id="user_guide_per_page-popup" class="popup">
+                <p><strong>1. Home Page:</strong> Overview of the platform. Brief descriptions of key metrics like population, water quality, and stakeholder information. Interactive elements explained, such as pop-ups for concept definitions.</p>
+                <p><strong>2. Climate Profile:</strong> Detailed explanation on interpreting climate information for Lebanon. Guidance on utilizing climate data within the platform.</p>
+                <p><strong>3. Climate Drivers:</strong> Explanation of historical and anticipated changes in climate drivers. Description of how these drivers impact hazard exposure. Sourcing for climate and exposure data.</p>
+                <p><strong>4. Impact Chains:</strong> How to navigate and interpret the impact chains for different communities. Explanation of the relevance of each chain to the specific hazards like winter storms, floods, and droughts.</p>
+                <p><strong>5. eVCA Results:</strong> Presentation of community-specific vulnerability and capacity assessments. Actionable insights and next steps based on these assessments.</p>
+                <p><strong>6. Prototype Adjustments (Field Visit Adjustments):</strong> Changes made to the platform based on field feedback. Detailed walkthrough of new functionalities or adjustments in layout and content.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function togglePopup(popupId) {
+            const popup = document.getElementById(popupId);
+            popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
