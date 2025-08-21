@@ -1,127 +1,255 @@
-</html><style>
-  body {
-    font-family: 'Calibri', sans-serif;
-    font-size: 17px;
-    background-color: #f9f9f9;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
-    height: 90vh;
-}
-
-h1 {
-    color: #c0392b;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.component {
-    margin-bottom: 20px;
-    color: #333;
-    font-size: 18px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.component h2 {
-    margin: 0;
-    font-size: 18px;
-}
-
-.popup {
-    display: none;
-    margin-top: 10px;
-    padding: 15px;
-    background-color: #fff;
-    border: 1px solid #e74c3c;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: #333;
-}
-
-.popup p {
-    margin: 0;
-}
-</style>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>User Guide for EVCA Page</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>User Guide – Lebanon Multi‑Hazard & Climate Platform</title>
+  <meta name="description" content="Professional user guide for the Lebanon Multi‑Hazard & Climate Platform (Home, Hazard & Exposure, Climate Drivers, Climate Profile, EVCA Results, Impact Chains)."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#f6f7fb; --panel:#ffffff; --text:#0f172a; --muted:#64748b; --border:#e5e7eb; --accent:#c4001a; --accent-600:#a90017; --accent-50:#fdecee; --shadow:0 10px 30px rgba(2,8,23,.07); --radius:18px; }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{ margin:0; font:16px/1.55 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--text); background:var(--bg); }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{color:var(--accent-600)}
+    .app{display:grid; grid-template-columns:280px 1fr; gap:24px; max-width:1400px; margin:0 auto; padding:24px}
+    .sidebar{ position:sticky; top:20px; align-self:start; background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px; height:max-content; }
+    .logoRow{display:flex; align-items:center; gap:12px; margin-bottom:10px}
+    .brand{font-weight:800; letter-spacing:.2px}
+    .sub{color:var(--muted); font-size:13px}
+    .nav{margin-top:14px}
+    .nav a{display:block; padding:10px 12px; border-radius:12px; color:#111827; border:1px dashed transparent}
+    .nav a:hover{background:var(--accent-50); border-color:#f3c1c6}
+    .cta{ display:block; margin-top:14px; background:var(--accent); color:#fff; text-align:center; padding:10px 14px; border-radius:12px; font-weight:600 }
+    .cta:hover{background:var(--accent-600)}
+    .header{ background:linear-gradient(180deg, #fff 0%, #fff 60%, rgba(255,255,255,.7) 100%); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; margin-bottom:20px; }
+    .title{font-size:28px; letter-spacing:.2px; margin:0 0 6px 0}
+    .kicker{display:inline-block; background:var(--accent-50); color:#7f1d1d; padding:4px 10px; border-radius:999px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.5px}
+    .content{display:flex; flex-direction:column; gap:18px}
+    .card{background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow)}
+    .card h2{margin:0 0 8px; font-size:22px}
+    .card h3{margin:18px 0 8px; font-size:18px}
+    .lead{color:var(--muted)}
+    .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    .tag{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border:1px solid var(--border); border-radius:999px; background:#fff}
+    .callout{border-left:4px solid var(--accent); background:#fff; padding:14px 14px 14px 16px; border-radius:12px; border:1px solid var(--border)}
+    .links{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
+    .linkBtn{border:1px solid var(--border); border-radius:999px; padding:8px 12px; background:#fff; font-weight:600}
+    .linkBtn:hover{border-color:#d1d5db; background:var(--accent-50)}
+    footer{color:var(--muted); font-size:13px; margin-top:8px}
+    @media (max-width: 1000px){ .app{grid-template-columns:1fr; padding:16px} .sidebar{position:relative; top:auto} }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>User Guide for EVCA Page</h1>
-        <div class="component" id="purpose" onclick="togglePopup('purpose-popup')">
-            <h2>Purpose</h2>
-            <div id="purpose-popup" class="popup">
-                <p>The EVCA (Enhanced Vulnerability and Capacity Assessment) page provides interactive access to community-based disaster risk management reports, hazard exposure maps, risk scores, and relevant tools.</p>
-            </div>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logoRow">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="6" fill="#c4001a"/><path d="M10.5 6h3v4.5H18v3h-4.5V18h-3v-4.5H6v-3h4.5V6z" fill="#fff"/></svg>
+        <div>
+          <div class="brand">Lebanon Multi‑Hazard & Climate</div>
+          <div class="sub">LRC • ICRC • Climate Centre • 510</div>
         </div>
-        <div class="component" id="navigation_usage" onclick="togglePopup('navigation_usage-popup')">
-            <h2>Navigation and Usage</h2>
-            <div id="navigation_usage-popup" class="popup">
-                <p><strong>Expandable Sections:</strong></p>
-                <p>The EVCA page contains several sections, each representing different aspects of vulnerability and capacity assessments. Each section is designed to be interactive, allowing users to expand and collapse detailed content.</p>
-                <p><strong>Interacting with Sections:</strong></p>
-                <p><em>Expanding a Section:</em> Click on the header of any section to expand it. Upon clicking, detailed information will be displayed below the header.</p>
-                <p><em>Collapsing a Section:</em> Click on the header of an already expanded section to collapse it. The detailed information will be hidden from view.</p>
-                <p><strong>Viewing Detailed Information:</strong></p>
-                <p>When a section is expanded, a pop-up containing detailed information will appear. This detailed information can include text descriptions, maps, data visualizations, and links to further resources. Each section provides insights into specific aspects of disaster risk management and community resilience.</p>
-                <p><strong>Using Interactive Data Visualizations:</strong></p>
-                <p>Some sections may include interactive data visualizations. Hover over or click on elements within these visualizations to view more details. These interactions can provide additional insights and context for the displayed data.</p>
-                <p><strong>Accessing Additional Tools and Reports:</strong></p>
-                <p>Links to additional tools, reports, and external resources may be provided within the expanded sections. Click on these links to access further information and resources that support disaster risk management efforts.</p>
-            </div>
+      </div>
+      <nav class="nav">
+        <a href="#overview">Overview (Home)</a>
+        <a href="#hazards">Hazard & Exposure + Climate Drivers</a>
+        <a href="#profile">Climate Profile</a>
+        <a href="#evca">EVCA Results</a>
+        <a href="#impacts">Impact Chains</a>
+        <a href="#navtips">Navigation Tips</a>
+        <a href="#glossary">Glossary</a>
+      </nav>
+      <a class="cta" href="https://experience.arcgis.com/experience/4d7e57da684d4e7092d6765aca74bfba/page/Home#data_s=id%3AdataSource_4-Lebanon_510_1120%3A181">Open Platform</a>
+      <div class="links">
+        <a class="linkBtn" href="https://experience.arcgis.com/experience/4d7e57da684d4e7092d6765aca74bfba/page/Home#data_s=id%3AdataSource_4-Lebanon_510_1120%3A181">Home</a>
+        <a class="linkBtn" href="https://experience.arcgis.com/experience/4d7e57da684d4e7092d6765aca74bfba/page/EVCA-Results#data_s=id%3AdataSource_4-Lebanon_510_1120%3A181">Hazard & Drivers</a>
+        <a class="linkBtn" href="https://experience.arcgis.com/experience/4d7e57da684d4e7092d6765aca74bfba/page/climate-Profile-embed#data_s=id%3AdataSource_4-Lebanon_510_1120%3A181">Climate Profile</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="header">
+        <span class="kicker">User Guide</span>
+        <h1 class="title">How to use the Lebanon Multi‑Hazard & Climate Platform</h1>
+        <p class="lead">This guide explains what each page represents, how to navigate the maps, and how to interpret the statistics and charts. Designed for planners, responders, and analysts working on risk‑informed decision‑making.</p>
+      </header>
+
+      <section id="overview" class="card">
+        <h2>1) Overview (Home)</h2>
+        <p><strong>Purpose.</strong> Introduces the platform and its data coverage. Use it to understand scope and jump to modules.</p>
+        <div class="grid-3">
+          <div class="callout"><strong>Coverage.</strong> Municipalities <em>1,627</em> • Districts <em>26</em> • Governorates <em>8</em>.</div>
+          <div class="callout"><strong>Map.</strong> Pan/zoom to explore administrative areas. Use the top menu to open analytical pages.</div>
+          <div class="callout"><strong>Partners.</strong> LRC, ICRC, Climate Centre, and 510 jointly developed this data‑driven platform.</div>
         </div>
-        <div class="component" id="usage_flow" onclick="togglePopup('usage_flow-popup')">
-            <h2>Example of Usage Flow</h2>
-            <div id="usage_flow-popup" class="popup">
-                <p><strong>Start:</strong> Open the EVCA page from the main menu.</p>
-                <p><strong>Expand a Section:</strong> Click on a section header (e.g., "Hazard Exposure Maps") to view the detailed information.</p>
-                <p><strong>Interact with Data:</strong> Hover over the data visualizations to explore more details.</p>
-                <p><strong>Collapse a Section:</strong> Click on the section header again to hide the detailed information. Navigate Between Areas: Use navigation arrows to move between different geographical areas if applicable.</p>
-                <p><strong>Access External Resources:</strong> Click on any provided links to access additional reports and tools.</p>
-            </div>
+        <h3>How to use</h3>
+        <ul>
+          <li>Start from the top red menu to open <em>Climate Profile</em>, <em>EVCA Results</em>, or <em>Impact Chains</em>.</li>
+          <li>Hover map features for quick info; follow <em>Read the story</em> for context.</li>
+        </ul>
+      </section>
+
+      <section id="hazards" class="card">
+        <h2>2) Hazard & Exposure + Climate Drivers</h2>
+        <p class="lead">Three synchronized views help you contrast current exposure, historical climate, and projected change.</p>
+        <div class="grid-3">
+          <div>
+            <h3>Left: Hazard & Exposure</h3>
+            <ul>
+              <li>Points and polygons show hazard events and exposed assets.</li>
+              <li>Use the search bar to jump to a <em>municipality</em> or <em>district</em>.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Center: Historic Drivers</h3>
+            <ul>
+              <li>Historic indicators such as SPI, precipitation, humidity.</li>
+              <li>Use layers to compare spatial patterns across Lebanon.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Right: Projected Change</h3>
+            <ul>
+              <li>Future (2021–2050) changes in climate drivers.</li>
+              <li>Read the table for per‑area values: SPI, humidity, temperatures, hot‑day counts.</li>
+            </ul>
+          </div>
         </div>
-        <div class="component" id="user_guide_per_page" onclick="togglePopup('user_guide_per_page-popup')">
-            <h2>User Guide Per Each Page</h2>
-            <div id="user_guide_per_page-popup" class="popup">
-                <p><strong>1. Home Page:</strong> Overview of the platform. Brief descriptions of key metrics like population, water quality, and stakeholder information. Interactive elements explained, such as pop-ups for concept definitions.</p>
-                <p><strong>2. Climate Profile:</strong> Detailed explanation on interpreting climate information for Lebanon. Guidance on utilizing climate data within the platform.</p>
-                <p><strong>3. Climate Drivers:</strong> Explanation of historical and anticipated changes in climate drivers. Description of how these drivers impact hazard exposure. Sourcing for climate and exposure data.</p>
-                <p><strong>4. Impact Chains:</strong> How to navigate and interpret the impact chains for different communities. Explanation of the relevance of each chain to the specific hazards like winter storms, floods, and droughts.</p>
-                <p><strong>5. eVCA Results:</strong> Presentation of community-specific vulnerability and capacity assessments. Actionable insights and next steps based on these assessments.</p>
-                <p><strong>6. Prototype Adjustments (Field Visit Adjustments):</strong> Changes made to the platform based on field feedback. Detailed walkthrough of new functionalities or adjustments in layout and content.</p>
-            </div>
+        <details>
+          <summary>Reading the table (quick primer)</summary>
+          <p><strong>Historic vs. Future</strong> columns show baseline and projection. <strong>Δ absolute / Δ%</strong> express the magnitude of change. SPI &lt; 0 indicates drier conditions; positive values indicate wetter conditions.</p>
+        </details>
+        <div class="links">
+          <a class="linkBtn" href="https://experience.arcgis.com/experience/4d7e57da684d4e7092d6765aca74bfba/page/EVCA-Results#data_s=id%3AdataSource_4-Lebanon_510_1120%3A181">Open this page</a>
         </div>
-    </div>
-    <script>
-        function togglePopup(popupId) {
-            const popup = document.getElementById(popupId);
-            popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+      </section>
+
+      <section id="profile" class="card">
+        <h2>3) Climate Profile – Lebanon</h2>
+        <p>Interactive map, charts, and narratives by municipality for a selected climate variable.</p>
+        <div class="grid-2">
+          <div>
+            <h3>Controls</h3>
+            <ul>
+              <li><strong>Variable</strong>: temperature (summer mean), humidity, precipitation, etc.</li>
+              <li><strong>Period</strong>: Historic vs. Future.</li>
+              <li><strong>Filters</strong>: Governorate, District, Municipality.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Outputs</h3>
+            <ul>
+              <li><strong>Choropleth Map</strong> of municipalities for the chosen variable.</li>
+              <li><strong>Time‑step Chart</strong> comparing historic vs. future.</li>
+              <li><strong>Top‑10 Change</strong> list ranked by Δ (largest shifts).</li>
+              <li><strong>Auto‑Summary</strong> (plain‑language interpretation for the selected area).</li>
+            </ul>
+          </div>
+        </div>
+        <details>
+          <summary>How to interpret color ramps</summary>
+          <p>Cool colors (greens/blues) generally mean lower values; warm colors (yellows/reds) mean higher values. Always confirm the legend units (°C, %, index).</p>
+        </details>
+        <div class="links">
+          <a class="linkBtn" href="https://experience.arcgis.com/experience/4d7e57da684d4e7092d6765aca74bfba/page/climate-Profile-embed#data_s=id%3AdataSource_4-Lebanon_510_1120%3A181">Open Climate Profile</a>
+        </div>
+      </section>
+
+      <section id="evca" class="card">
+        <h2>4) EVCA Results</h2>
+        <p class="lead">Community‑level assessments combining hazards, vulnerabilities, capacities, and priorities.</p>
+        <div class="grid-2">
+          <div>
+            <h3>Selectors</h3>
+            <ul>
+              <li>Choose <strong>Governorate → District → Municipality</strong>.</li>
+              <li>Select a <strong>Resilience Dimension</strong> to view details.</li>
+            </ul>
+            <h3>Hazards</h3>
+            <ul>
+              <li>Main hazards (e.g., Forest Fire, Winter Storm, Soil Erosion) with cause/origin, warning signs, onset, frequency.</li>
+              <li>Use this to plan early‑warning, mitigation, and preparedness.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>What you see</h3>
+            <ul>
+              <li><strong>Radar (Community Score)</strong> across 10 dimensions.</li>
+              <li><strong>Vulnerability</strong> & <strong>Capacity</strong> narratives for the selected dimension.</li>
+              <li><strong>Priorities</strong>: suggested focus areas for action.</li>
+              <li><strong>Map</strong>: highlighted municipality for spatial context.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="impacts" class="card">
+        <h2>5) Impact Chains</h2>
+        <p>Interactive cause–effect diagrams show how hazards propagate through exposure and vulnerability into sectoral impacts, and where adaptation/mitigation and capacity measures can break the chain.</p>
+        <h3>What you can do on this page</h3>
+        <ul>
+          <li><strong>Filter chips</strong> at the top (e.g., Natural Hazard, Man‑made hazard, Impact, Capacity, Vulnerability, External driver, Exposed system, Adaptation/mitigation measure) to highlight relevant nodes.</li>
+          <li><strong>Left sidebar</strong> to switch context (e.g., Arsal, Blue Line, North‑Akkar).</li>
+          <li><strong>Zoom / pan</strong> the canvas; use the toolbar for fit‑to‑screen or center.</li>
+          <li><strong>Click any node</strong> to open the narrative panel (left) with a definition, local context, references, and associated <em>Resilience Dimension</em> tags.</li>
+        </ul>
+        <h3>How to read the graph</h3>
+        <ul>
+          <li><span class="tag">Colours</span> represent types: light‑blue = Natural hazard, steel‑blue = Man‑made hazard, grey = Impact, mint = Capacity, orange = Exposed system, teal = External driver.</li>
+          <li><span class="tag">Arrow styles</span>: green = <em>causes</em>, red = <em>mitigates</em>, blue = <em>affects/relates</em>.</li>
+          <li><span class="tag">Legend</span> at the bottom repeats the mapping between colours and line types.</li>
+        </ul>
+        <h3>Typical workflows</h3>
+        <ol>
+          <li>Select a context from the sidebar (e.g., <em>Blue Line</em>).</li>
+          <li>Use filter chips to focus on a subset (e.g., <em>Impact</em> + <em>Capacity</em>).</li>
+          <li>Click a node (e.g., <em>Moving mines</em> or <em>Uneven distributed aid</em>) to read the narrative, sources, and resilience dimensions.</li>
+          <li>Trace upstream causes and downstream impacts to identify <strong>intervention points</strong> (awareness sessions, contingency planning, funding for emergency centres, etc.).</li>
+        </ol>
+      </section>
+
+      <section id="navtips" class="card">
+        <h2>6) Navigation Tips</h2>
+        <ul>
+          <li>Use the red top menu to switch modules; use in‑map search bars to jump to places.</li>
+          <li>Hover features for pop‑ups; use mouse wheel or touch to zoom; drag to pan.</li>
+          <li>Compare <em>Historic</em> vs <em>Future</em> to understand trends; export screenshots for reports.</li>
+        </ul>
+        <div class="grid-3">
+          <span class="tag">Historic vs. Future</span>
+          <span class="tag">Δ absolute / Δ%</span>
+          <span class="tag">SPI • Temperature • Humidity</span>
+        </div>
+      </section>
+
+      <section id="glossary" class="card">
+        <h2>Glossary & Notes</h2>
+        <ul>
+          <li><strong>SPI (Standardized Precipitation Index)</strong>: negative → drier; positive → wetter vs baseline.</li>
+          <li><strong>Δ (Delta)</strong>: change between future and historic values; may be shown as °C, %, or index units.</li>
+          <li><strong>EVCA</strong>: Enhanced Vulnerability and Capacity Assessment—community driven assessment framework.</li>
+        </ul>
+        <footer>© Lebanese Red Cross (LRC), ICRC, Climate Centre, 510 – Lebanon Multi‑Hazard & Climate Platform. Guide compiled for professional use.</footer>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Smooth scroll for internal links (same‑tab navigation)
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if(id.length > 1){
+          e.preventDefault();
+          const el = document.querySelector(id);
+          if(el){ el.scrollIntoView({behavior:'smooth', block:'start'}); }
         }
-    </script>
+      });
+    });
+  </script>
 </body>
 </html>
